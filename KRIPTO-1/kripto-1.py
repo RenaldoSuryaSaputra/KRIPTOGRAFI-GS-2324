@@ -22,9 +22,11 @@ else:
         for karakter in range (len(ciphertext_str)): # loop berdasarkan char pada string input
             # cek apakah nilai ascii dari masing2 char yang ditambah dengan nilai kunci akan melebihi 122 / "z"
             if ord(ciphertext_str[karakter])+nilai_kunci[i] <= 122: # langsung tambah ke list ciphertext jika tidak melebihi 122
+                #Menambahkan value/nilai baru berdasarkan kunci
                 ciphertext.append(chr(ord(ciphertext_str[karakter])+nilai_kunci[i])) 
             else:
                 kelebihan_alpha = (ord(ciphertext_str[karakter])+nilai_kunci[i] - 122) # diambil kelebihannya dan ditambahkan pada bagian awal alphabet 97
+                #Menambahkan value/nilai baru berdasarkan kunci
                 ciphertext.append(chr(ord("a")+kelebihan_alpha-1))
         ciphertext_str = ''.join(ciphertext) #menggabungkan list menjadi 1 string
         # Output
